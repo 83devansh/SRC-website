@@ -98,7 +98,8 @@ const SRC_DATA = {
   ],
 
   // Events & Workshops Directory
- events: [
+ // Events & Workshops Directory
+events: [
 
   // ============================================================
   // 1. DIGITOD VISIT
@@ -137,8 +138,7 @@ const SRC_DATA = {
     prerequisites:
       "Open to participating SRC students.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #0c4a6e, #164e63)"
+   image: "event-img/digitod-visit.png",
   },
 
 
@@ -160,7 +160,7 @@ const SRC_DATA = {
       "A technology-focused hackathon bringing together students to explore artificial intelligence, robotics, and innovative problem solving.",
 
     fullDescription:
-      "The AI & Robotics Hackathon provided students with a platform to collaborate, experiment, build, and present technology-driven solutions. The event encouraged creativity, technical thinking, teamwork, and rapid prototyping.",
+      "The AI & Robotics Hackathon provides students with a platform to collaborate, experiment, build, and present technology-driven solutions. The event encourages creativity, technical thinking, teamwork, and rapid prototyping.",
 
     highlights: [
       "Artificial Intelligence",
@@ -181,13 +181,12 @@ const SRC_DATA = {
     prerequisites:
       "Open to students interested in AI, robotics, coding, electronics, and innovation.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #312e81, #4c1d95)"
+    image: "event-img/hackathon.png",
   },
 
 
   // ============================================================
-  // 3. BINARY BATTLES
+  // 3. BINARY BATTLES — COMPLETED
   // ============================================================
   {
     id: "binary-battles",
@@ -196,15 +195,15 @@ const SRC_DATA = {
 
     category: "Competitions",
 
-    status: "Upcoming",
+    status: "Completed",
 
     badgeColor: "cyan",
 
     shortDescription:
-      "A competitive technical challenge designed to test students' logical thinking, problem-solving, and technical skills.",
+      "A technical competition that challenged students' logical thinking, problem-solving abilities, and technical skills.",
 
     fullDescription:
-      "Binary Battles created an engaging competitive environment where students could challenge themselves through technical problems and logical thinking. The event combined competition, learning, and student engagement in a fast-paced format.",
+      "Binary Battles created an engaging competitive environment where students challenged themselves through technical problems and logical thinking. The event combined competition, learning, and student engagement in a fast-paced format.",
 
     highlights: [
       "Technical challenges",
@@ -225,8 +224,11 @@ const SRC_DATA = {
     prerequisites:
       "Open to participating students.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #172554, #1e3a8a)"
+    date: "Completed",
+    time: "Details to be updated",
+    location: "Details to be updated",
+
+    image: "event-img/binary-battles.png"
   },
 
 
@@ -269,8 +271,7 @@ const SRC_DATA = {
     prerequisites:
       "Open to students interested in innovation and creating solutions.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #78350f, #92400e)"
+    image: "event-img/nirmaan.png"
   },
 
 
@@ -313,8 +314,7 @@ const SRC_DATA = {
     prerequisites:
       "Requirements may vary depending on the individual workshop.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #064e3b, #047857)"
+    image: "event-img/workshops.png"
   },
 
 
@@ -357,8 +357,7 @@ const SRC_DATA = {
     prerequisites:
       "Open to participating SRC students.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #0f3b5f, #155e75)"
+    image: "event-img/LQLP.png"
   },
 
 
@@ -380,7 +379,7 @@ const SRC_DATA = {
       "An educational visit providing students with exposure to forensic science, investigation, and specialised professional practices.",
 
     fullDescription:
-      "The International Forensic Visit offered students an opportunity to gain exposure to the field of forensic science and understand how scientific methods can be applied in investigative environments. The experience encouraged curiosity, observation, and practical learning.",
+      "The International Forensic Visit offers students an opportunity to gain exposure to the field of forensic science and understand how scientific methods can be applied in investigative environments. The experience encourages curiosity, observation, and practical learning.",
 
     highlights: [
       "Forensic science exposure",
@@ -401,8 +400,7 @@ const SRC_DATA = {
     prerequisites:
       "Open to participating students.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #1e1b4b, #312e81)"
+    image: "event-img/FORENSIC-VISIT.png"
   },
 
 
@@ -445,8 +443,101 @@ const SRC_DATA = {
     prerequisites:
       "Open to participating students.",
 
-    imagePlaceholder:
-      "linear-gradient(135deg, #7c2d12, #b45309)"
+    image: "event-img/CARNIVAL.png"
+  },
+
+
+  // ============================================================
+  // 9. IDEATHON — COMPLETED
+  // ============================================================
+  {
+    id: "ideathon",
+
+    title: "Ideathon",
+
+    category: "Innovation",
+
+    status: "Completed",
+
+    badgeColor: "amber",
+
+    shortDescription:
+      "A completed idea-generation event where students explored problems, developed concepts, and presented innovative solutions.",
+
+    fullDescription:
+      "Ideathon was conducted as an idea-generation and innovation event where students explored real-world problems, developed creative concepts, and presented potential solutions. The event encouraged collaboration, problem-solving, creativity, and entrepreneurial thinking.",
+
+    highlights: [
+      "Idea generation",
+      "Problem solving",
+      "Innovation",
+      "Student participation",
+      "Creative thinking"
+    ],
+
+    agenda: [
+      "Problem identification",
+      "Idea generation",
+      "Solution development",
+      "Idea presentations",
+      "Results and recognition"
+    ],
+
+    prerequisites:
+      "Open to participating students.",
+
+    date: "Completed",
+    time: "Details to be updated",
+    location: "Details to be updated",
+
+    image: "event-img/ideathon.png"
+  },
+
+
+  // ============================================================
+  // 10. PROTOSPHERE — COMPLETED
+  // ============================================================
+  {
+    id: "protosphere",
+
+    title: "Protosphere",
+
+    category: "Innovation",
+
+    status: "Completed",
+
+    badgeColor: "violet",
+
+    shortDescription:
+      "A completed innovation and prototyping event focused on turning student ideas into practical concepts and prototypes.",
+
+    fullDescription:
+      "Protosphere was conducted as an innovation and prototyping event focused on transforming student ideas into practical concepts. The event encouraged experimentation, prototype development, presentation, and solution-oriented thinking.",
+
+    highlights: [
+      "Prototyping",
+      "Innovation",
+      "Idea development",
+      "Practical solutions",
+      "Project presentation"
+    ],
+
+    agenda: [
+      "Problem exploration",
+      "Idea development",
+      "Prototype planning",
+      "Project presentation",
+      "Results and recognition"
+    ],
+
+    prerequisites:
+      "Open to participating students.",
+
+    date: "Completed",
+    time: "Details to be updated",
+    location: "Details to be updated",
+
+    image: "event-img/protosphere.png"
   }
 
 ],
