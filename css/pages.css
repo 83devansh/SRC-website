@@ -888,3 +888,870 @@
         font-size: 0.7rem;
     }
 }
+
+/* ============================================================
+   SRC — HORIZONTAL JOURNEY
+   Desktop:
+   Vertical page scroll -> Horizontal Journey
+
+   Mobile:
+   Native horizontal swipe
+============================================================ */
+
+.journey-section {
+  position: relative;
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    Do NOT use overflow:hidden here.
+    It breaks position:sticky.
+  */
+  overflow: visible;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 210, 255, 0.045),
+      transparent 55%
+    );
+}
+
+
+/* ============================================================
+   HEADING
+============================================================ */
+
+.journey-heading {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ============================================================
+   SCROLL AREA
+============================================================ */
+
+.journey-scroll-area {
+  position: relative;
+
+  /*
+    JavaScript calculates the exact height.
+    DO NOT use 390vh / 350vh here.
+  */
+  height: auto;
+}
+
+
+/* ============================================================
+   STICKY VIEWPORT
+============================================================ */
+
+.journey-sticky {
+  position: sticky;
+
+  /*
+    Header is fixed at the top.
+    Keep Journey below it.
+  */
+  top: 70px;
+
+  width: 100%;
+
+  height: calc(100vh - 70px);
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   TRACK VIEWPORT
+============================================================ */
+
+.journey-track-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 500px;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   HORIZONTAL TRACK
+============================================================ */
+
+.journey-track {
+
+  --card-width: clamp(
+    280px,
+    22vw,
+    360px
+  );
+
+  --journey-gap: clamp(
+    3rem,
+    7vw,
+    7rem
+  );
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  height: 100%;
+
+  gap: var(--journey-gap);
+
+  /*
+    Keep the first and last cards comfortably
+    inside the screen.
+  */
+  padding-left: max(
+    5vw,
+    calc((100vw - 1280px) / 2)
+  );
+
+  padding-right: max(
+    5vw,
+    calc((100vw - 1280px) / 2)
+  );
+
+  will-change: transform;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 80ms linear;
+}
+
+
+/* ============================================================
+   HORIZONTAL LINE
+============================================================ */
+
+.journey-line {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  height: 2px;
+
+  transform: translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 210, 255, 0.08),
+      rgba(0, 210, 255, 0.28),
+      rgba(139, 92, 246, 0.28),
+      rgba(0, 210, 255, 0.08)
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ============================================================
+   PROGRESS LINE
+============================================================ */
+
+.journey-line-progress {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-cyan),
+      var(--color-blue),
+      var(--color-violet)
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(0, 210, 255, 0.75);
+
+  transition:
+    width 80ms linear;
+}
+
+
+/* ============================================================
+   JOURNEY ITEM
+============================================================ */
+
+.journey-item {
+
+  position: relative;
+
+  flex: 0 0 var(--card-width);
+
+  width: var(--card-width);
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  z-index: 3;
+}
+
+
+/* ============================================================
+   TOP CARDS
+============================================================ */
+
+.journey-item-top {
+  padding-bottom: 245px;
+}
+
+
+/* ============================================================
+   BOTTOM CARDS
+============================================================ */
+
+.journey-item-bottom {
+  padding-top: 245px;
+}
+
+
+/* ============================================================
+   CARD
+============================================================ */
+
+.journey-card {
+
+  width: 100%;
+
+  padding: clamp(
+    1.15rem,
+    1.8vw,
+    1.6rem
+  );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(9, 15, 29, 0.94)
+    );
+
+  border:
+    1px solid
+    var(--border-subtle);
+
+  border-radius:
+    var(--radius-lg);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  opacity: 0.28;
+
+  transform:
+    scale(0.88)
+    translateY(18px);
+
+  transition:
+    opacity 0.55s
+      cubic-bezier(0.16, 1, 0.3, 1),
+
+    transform 0.55s
+      cubic-bezier(0.16, 1, 0.3, 1),
+
+    border-color 0.55s ease,
+
+    box-shadow 0.55s ease;
+}
+
+
+/* ============================================================
+   ACTIVE CARD
+============================================================ */
+
+.journey-item.active .journey-card {
+
+  opacity: 1;
+
+  transform:
+    scale(1)
+    translateY(0);
+
+  border-color:
+    rgba(0, 210, 255, 0.55);
+
+  box-shadow:
+    0 20px 50px
+      rgba(0, 0, 0, 0.45),
+
+    0 0 30px
+      rgba(0, 210, 255, 0.12);
+}
+
+
+/* ============================================================
+   FEATURED CURIOMINDS
+============================================================ */
+
+.journey-item-featured .journey-card {
+
+  border-color:
+    rgba(139, 92, 246, 0.3);
+}
+
+
+.journey-item-featured.active .journey-card {
+
+  border-color:
+    rgba(139, 92, 246, 0.7);
+
+  box-shadow:
+    0 20px 50px
+      rgba(0, 0, 0, 0.45),
+
+    0 0 35px
+      rgba(139, 92, 246, 0.2);
+}
+
+
+/* ============================================================
+   JOURNEY NODE
+============================================================ */
+
+.journey-node {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    2px solid
+    var(--color-cyan);
+
+  border-radius: 50%;
+
+  background:
+    var(--bg-dark);
+
+  box-shadow:
+    0 0 0 5px
+      rgba(0, 210, 255, 0.08),
+
+    0 0 18px
+      rgba(0, 210, 255, 0.8);
+
+  z-index: 10;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+.journey-node span {
+
+  position: absolute;
+
+  inset: 4px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-cyan);
+}
+
+
+.journey-item.active .journey-node {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.35);
+
+  box-shadow:
+    0 0 0 7px
+      rgba(0, 210, 255, 0.08),
+
+    0 0 28px
+      rgba(0, 210, 255, 1);
+}
+
+
+/* ============================================================
+   FEATURED NODE
+============================================================ */
+
+.journey-item-featured .journey-node {
+
+  border-color:
+    var(--color-violet);
+
+  box-shadow:
+    0 0 0 5px
+      rgba(139, 92, 246, 0.08),
+
+    0 0 20px
+      rgba(139, 92, 246, 0.85);
+}
+
+
+.journey-item-featured .journey-node span {
+
+  background:
+    var(--color-violet);
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+============================================================ */
+
+.journey-placeholder {
+
+  display: inline-flex;
+
+  width: fit-content;
+
+  margin-top: 1rem;
+
+  padding:
+    0.3rem 0.65rem;
+
+  border:
+    1px dashed
+    rgba(59, 130, 246, 0.4);
+
+  border-radius:
+    var(--radius-sm);
+
+  color:
+    #93c5fd;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.62rem;
+}
+
+
+/* ============================================================
+   ACTIVE BADGE
+============================================================ */
+
+.journey-active-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  width: fit-content;
+
+  margin-top: 1rem;
+
+  padding:
+    0.3rem 0.7rem;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.4);
+
+  border-radius:
+    var(--radius-full);
+
+  background:
+    rgba(139, 92, 246, 0.15);
+
+  color:
+    #c084fc;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   SCROLL HINT
+============================================================ */
+
+.journey-scroll-hint {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 1.5rem;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  color:
+    var(--text-subtle);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.68rem;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.08em;
+
+  white-space:
+    nowrap;
+
+  z-index: 20;
+}
+
+
+.journey-scroll-hint i {
+
+  color:
+    var(--color-cyan);
+
+}
+
+
+/* ============================================================
+   LAPTOP
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .journey-track {
+
+    --card-width:
+      clamp(
+        260px,
+        24vw,
+        320px
+      );
+
+    --journey-gap:
+      clamp(
+        2.5rem,
+        5vw,
+        5rem
+      );
+
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+
+  .journey-track-wrapper {
+
+    height: 470px;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 225px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 225px;
+  }
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 860px) {
+
+  .journey-track {
+
+    --card-width: 280px;
+
+    --journey-gap: 3rem;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+
+  .journey-card {
+
+    padding: 1.15rem;
+  }
+
+
+  .journey-track-wrapper {
+
+    height: 450px;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 215px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 215px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+  .journey-section {
+
+    overflow: visible;
+  }
+
+
+  .journey-scroll-area {
+
+    height: auto !important;
+
+    padding-bottom: 2rem;
+  }
+
+
+  .journey-sticky {
+
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    min-height: 0;
+
+    display: block;
+
+    overflow: visible;
+  }
+
+
+  .journey-track-wrapper {
+
+    width: 100%;
+
+    height: 450px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-snap-type:
+      x mandatory;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width: thin;
+  }
+
+
+  .journey-track {
+
+    width: max-content;
+
+    height: 450px;
+
+    gap: 2rem;
+
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    transform: none !important;
+
+    transition: none;
+  }
+
+
+  .journey-item {
+
+    flex:
+      0 0 280px;
+
+    width: 280px;
+
+    height: 450px;
+
+    scroll-snap-align:
+      center;
+  }
+
+
+  .journey-card {
+
+    width: 280px;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 215px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 215px;
+  }
+
+
+  .journey-scroll-hint {
+
+    display: none;
+  }
+
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 380px) {
+
+  .journey-track {
+
+    gap: 1.5rem;
+  }
+
+
+  .journey-item {
+
+    flex-basis: 255px;
+
+    width: 255px;
+  }
+
+
+  .journey-card {
+
+    width: 255px;
+  }
+
+}
+
+/* ============================================================
+   INDEX PAGE - REDUCE HERO TO EVENTS GAP
+============================================================ */
+
+#upcoming-events {
+    padding-top: 3rem !important;
+}
+
+#upcoming-events .section-header {
+    margin-top: 0;
+}
+
+/* Reduce bottom space of the hero */
+.hero-section {
+    padding-bottom: 2rem !important;
+}
+
+/* =========================================================
+   EVENT CARD IMAGES
+   ========================================================= */
+
+.event-card-media {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.event-card-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-card-image {
+  transform: scale(1.06);
+}
+
+.event-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.55)
+  );
+  pointer-events: none;
+}
