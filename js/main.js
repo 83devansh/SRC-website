@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimatedCounters();
   initAccordions();
   highlightActiveNav();
+    initJourneyTimeline();
 });
 
 /* --- 1. Sticky Header with Blur on Scroll --- */
@@ -192,3 +193,253 @@ function showToast(message, icon = '✨') {
 
 // Make showToast accessible globally
 window.showToast = showToast;
+
+/* ============================================================
+   SRC — HORIZONTAL JOURNEY SCROLL
+   Vertical page scroll → Horizontal timeline movement
+============================================================ */
+
+function initJourneyTimeline() {
+
+  const scrollArea = document.querySelector(".journey-scroll-area");
+  const sticky = document.querySelector(".journey-sticky");
+  const wrapper = document.querySelector(".journey-track-wrapper");
+  const track = document.querySelector(".journey-track");
+  const items = document.querySelectorAll(".journey-item");
+  const progress = document.querySelector(".journey-line-progress");
+
+  if (
+    !scrollArea ||
+    !sticky ||
+    !wrapper ||
+    !track ||
+    !items.length
+  ) {
+    return;
+  }
+
+
+  /* ------------------------------------------------------------
+     Calculate the exact horizontal distance
+  ------------------------------------------------------------ */
+
+  function setupJourney() {
+
+    /* Mobile does NOT use vertical pinning */
+    if (window.innerWidth <= 700) {
+
+      scrollArea.style.height = "auto";
+
+      track.style.transform = "none";
+
+      items.forEach(item => {
+        item.classList.add("active");
+      });
+
+      if (progress) {
+        progress.style.width = "0%";
+      }
+
+      return;
+    }
+
+
+    /* ----------------------------------------------------------
+       Get actual dimensions
+    ---------------------------------------------------------- */
+
+    const wrapperWidth =
+      wrapper.getBoundingClientRect().width;
+
+    const trackWidth =
+      track.scrollWidth;
+
+
+    /*
+      This is the exact amount the timeline
+      needs to travel horizontally.
+    */
+
+    const horizontalDistance =
+      Math.max(
+        0,
+        trackWidth - wrapperWidth
+      );
+
+
+    /* ----------------------------------------------------------
+       IMPORTANT:
+       Vertical scroll distance now matches
+       horizontal travel distance.
+    ---------------------------------------------------------- */
+
+    scrollArea.style.height =
+      `${window.innerHeight + horizontalDistance}px`;
+
+
+    updateJourney();
+  }
+
+
+  /* ------------------------------------------------------------
+     Update timeline
+  ------------------------------------------------------------ */
+
+  function updateJourney() {
+
+    if (window.innerWidth <= 700) {
+      return;
+    }
+
+
+    const rect =
+      scrollArea.getBoundingClientRect();
+
+
+    /*
+      Because scrollArea height is now:
+
+      viewport height + horizontal distance
+
+      this gives us a perfect 0 → 1 range.
+    */
+
+    const maxScroll =
+      scrollArea.offsetHeight -
+      window.innerHeight;
+
+
+    if (maxScroll <= 0) {
+      return;
+    }
+
+
+    let scrollProgress =
+      -rect.top / maxScroll;
+
+
+    scrollProgress =
+      Math.max(
+        0,
+        Math.min(
+          1,
+          scrollProgress
+        )
+      );
+
+
+    /* ----------------------------------------------------------
+       Calculate horizontal movement
+    ---------------------------------------------------------- */
+
+    const wrapperWidth =
+      wrapper.getBoundingClientRect().width;
+
+    const trackWidth =
+      track.scrollWidth;
+
+    const maxTranslate =
+      Math.max(
+        0,
+        trackWidth - wrapperWidth
+      );
+
+
+    const translateX =
+      scrollProgress * maxTranslate;
+
+
+    track.style.transform =
+      `translate3d(${-translateX}px, 0, 0)`;
+
+
+    /* ----------------------------------------------------------
+       Progress
+    ---------------------------------------------------------- */
+
+    if (progress) {
+
+      progress.style.width =
+        `${scrollProgress * 100}%`;
+
+    }
+
+
+    /* ----------------------------------------------------------
+       Active milestone
+    ---------------------------------------------------------- */
+
+    const itemCount =
+      items.length;
+
+
+    /*
+      Small delay between milestones so
+      each one gets its own moment.
+    */
+
+    const activeIndex =
+      Math.min(
+        itemCount - 1,
+        Math.floor(
+          scrollProgress * itemCount
+        )
+      );
+
+
+    items.forEach((item, index) => {
+
+      item.classList.toggle(
+        "active",
+        index === activeIndex
+      );
+
+    });
+
+  }
+
+
+  /* ------------------------------------------------------------
+     Scroll listener
+  ------------------------------------------------------------ */
+
+  window.addEventListener(
+    "scroll",
+    updateJourney,
+    {
+      passive: true
+    }
+  );
+
+
+  /* ------------------------------------------------------------
+     Resize listener
+  ------------------------------------------------------------ */
+
+  let resizeTimer;
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      clearTimeout(resizeTimer);
+
+      resizeTimer = setTimeout(() => {
+
+        setupJourney();
+
+      }, 100);
+
+    }
+  );
+
+
+  /* ------------------------------------------------------------
+     Initial setup
+  ------------------------------------------------------------ */
+
+  setupJourney();
+
+}
+
+
