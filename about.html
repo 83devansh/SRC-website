@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
+<style>
+    /* Clean justified text across page content */
+    .page-justified p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+</style>
 </head>
 <body>
 
@@ -33,14 +40,15 @@
           <li class="nav-item"><a href="index.html">Home</a></li>
           <li class="nav-item active"><a href="about.html">About SRC</a></li>
           <li class="nav-item"><a href="events.html">Events</a></li>
+          
+          <li class="nav-item"><a href="team.html">Team</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
           <li class="nav-item">
             <a href="curiominds.html">
               Curiominds
               <span class="badge-nav-new">NEW</span>
             </a>
           </li>
-          <li class="nav-item"><a href="team.html">Team</a></li>
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -78,7 +86,7 @@
   <!-- ==========================================================================
        Main Content
        ========================================================================== -->
-  <main id="main-content">
+  <main id="main-content" class="page-justified">
     
     <!-- Hero Header -->
     <section class="section" style="padding-top: calc(var(--nav-height) + 3.5rem); padding-bottom: 3.5rem; background: radial-gradient(circle at 50% 10%, rgba(0, 210, 255, 0.12) 0%, transparent 60%);">
@@ -119,14 +127,21 @@
               <span>🏛️</span> The SRC Charter
             </h3>
             <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
-              "To democratize scientific inquiry, champion empirical exploration, and empower student investigators to translate theoretical knowledge into transformative real-world impact."
+              "To democratize inquiry across every discipline, connect ideas across academic boundaries, and empower students to transform knowledge into meaningful real-world impact."
             </p>
             <div style="padding: 1rem; background: rgba(0, 210, 255, 0.06); border-radius: var(--radius-md); border: 1px dashed rgba(0, 210, 255, 0.3);">
               <div style="font-family: var(--font-mono); font-size: 0.825rem; color: var(--color-cyan);">
                 KEY FOCUS AREAS:
               </div>
               <div style="font-size: 0.9rem; color: var(--text-main); margin-top: 0.4rem;">
-                Artificial Intelligence • Autonomous Systems • Clean Energy • Biotechnology • Quantum Computing • Human-Centered Engineering
+                SRC is interdisciplinary by design — supporting research, innovation, and real-world problem solving across
+                <strong>all academic domains</strong>, from Engineering, Technology, AI, and Computer Science to
+                Natural Sciences, Life Sciences, Health, Environment, Social Sciences, Humanities, Business, Design,
+                and emerging interdisciplinary fields.
+              </div>
+              <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.9rem; line-height: 1.55;">
+                No discipline stands alone. SRC welcomes domain-specific research as well as projects that
+                combine perspectives, methods, and expertise from multiple fields.
               </div>
             </div>
           </div>
@@ -286,84 +301,253 @@
     <!-- ==========================================================================
          Section: Our Journey (Visual Timeline Roadmap)
          ========================================================================== -->
-    <section class="section" id="journey">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Milestones & History</span>
-          <h2 class="section-title">Our <span class="text-gradient">Journey</span></h2>
-          <p class="section-description">
-            The key milestones, symposia, and institutional developments shaping our evolution.
-          </p>
+   <!-- ==========================================================================
+     Section: Our Journey — Horizontal Scroll Timeline
+     ========================================================================== -->
+
+<section class="journey-section" id="journey">
+
+  <div class="journey-heading container">
+
+    <div class="section-header">
+      <span class="section-tag">Milestones & History</span>
+
+      <h2 class="section-title">
+        Our <span class="text-gradient">Journey</span>
+      </h2>
+
+      <p class="section-description">
+        The key milestones, symposia, and institutional developments
+        shaping our evolution.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Scroll area -->
+
+  <div class="journey-scroll-area">
+
+    <div class="journey-sticky">
+
+      <div class="journey-track-wrapper">
+
+        <div class="journey-track">
+
+
+          <!-- ==========================================================
+               TIMELINE LINE
+               ========================================================== -->
+
+          <div class="journey-line">
+
+            <div class="journey-line-progress"></div>
+
+          </div>
+
+
+          <!-- ==========================================================
+               MILESTONE 1
+               ========================================================== -->
+
+          <article class="journey-item journey-item-top">
+
+            <div class="journey-card">
+
+              <span class="journey-card-label">
+                <i class="fa-solid fa-seedling"></i>
+                Inception Milestone
+              </span>
+
+              <h3>
+                Foundation of Student Research Council
+              </h3>
+
+              <p>
+                Conceived by student innovators and faculty advisors
+                to create a dedicated hub for student-driven
+                scientific investigation.
+              </p>
+
+              <span class="journey-placeholder">
+                Replace with Milestone Details
+              </span>
+
+            </div>
+
+            <div class="journey-node">
+              <span></span>
+            </div>
+
+          </article>
+
+
+          <!-- ==========================================================
+               MILESTONE 2
+               ========================================================== -->
+
+          <article class="journey-item journey-item-bottom">
+
+            <div class="journey-node">
+              <span></span>
+            </div>
+
+            <div class="journey-card">
+
+              <span class="journey-card-label">
+                <i class="fa-solid fa-users"></i>
+                Semester 1 Milestone
+              </span>
+
+              <h3>
+                Inaugural Campus Research Symposium
+              </h3>
+
+              <p>
+                Hosted over 300+ students and showcased 40+ research
+                posters with distinguished academic keynote speakers.
+              </p>
+
+              <span class="journey-placeholder">
+                Replace with Milestone Details
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ==========================================================
+               MILESTONE 3
+               ========================================================== -->
+
+          <article class="journey-item journey-item-top">
+
+            <div class="journey-card">
+
+              <span class="journey-card-label">
+                <i class="fa-solid fa-flask"></i>
+                Semester 2 Milestone
+              </span>
+
+              <h3>
+                Establishment of Prototyping Labs & Grants
+              </h3>
+
+              <p>
+                Secured dedicated laboratory space, compute credits,
+                and launched micro-grants for undergraduate projects.
+              </p>
+
+              <span class="journey-placeholder">
+                Replace with Milestone Details
+              </span>
+
+            </div>
+
+            <div class="journey-node">
+              <span></span>
+            </div>
+
+          </article>
+
+
+          <!-- ==========================================================
+               MILESTONE 4
+               ========================================================== -->
+
+          <article class="journey-item journey-item-bottom journey-item-featured">
+
+            <div class="journey-node">
+              <span></span>
+            </div>
+
+            <div class="journey-card">
+
+              <span class="journey-card-label">
+                <i class="fa-solid fa-rocket"></i>
+                Newly Launched
+              </span>
+
+              <h3>
+                Launch of Curiominds Platform
+              </h3>
+
+              <p>
+                Unveiled the Curiominds initiative to nurture grassroots
+                curiosity, interdisciplinary thinking, and rapid
+                problem-solving.
+              </p>
+
+              <span class="journey-active-badge">
+                <i class="fa-solid fa-bolt"></i>
+                Active Flagship Platform
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- ==========================================================
+               MILESTONE 5
+               ========================================================== -->
+
+          <article class="journey-item journey-item-top">
+
+            <div class="journey-card">
+
+              <span class="journey-card-label">
+                <i class="fa-solid fa-earth-americas"></i>
+                Future Roadmap
+              </span>
+
+              <h3>
+                Global Research Exchange & Venture Incubator
+              </h3>
+
+              <p>
+                Expanding publication mentorship and establishing
+                formal incubation pathways for student intellectual
+                property.
+              </p>
+
+              <span class="journey-placeholder">
+                Future Roadmap Placeholder
+              </span>
+
+            </div>
+
+            <div class="journey-node">
+              <span></span>
+            </div>
+
+          </article>
+
+
         </div>
 
-        <div class="timeline-container">
-          <!-- Timeline Item 1 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[Inception Milestone]</div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">[Foundation of Student Research Council]</h3>
-              <p style="font-size: 0.95rem; color: var(--text-muted);">
-                Conceived by student innovators and faculty advisors to create a dedicated hub for student-driven scientific investigation.
-              </p>
-              <span class="placeholder-tag" style="margin-top: 0.75rem;">[Replace with Milestone Details]</span>
-            </div>
-          </div>
-
-          <!-- Timeline Item 2 -->
-          <div class="timeline-item reveal reveal-delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[Semester 1 Milestone]</div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">[Inaugural Campus Research Symposium]</h3>
-              <p style="font-size: 0.95rem; color: var(--text-muted);">
-                Hosted over 300+ students and showcased 40+ research posters with distinguished academic keynote speakers.
-              </p>
-              <span class="placeholder-tag" style="margin-top: 0.75rem;">[Replace with Milestone Details]</span>
-            </div>
-          </div>
-
-          <!-- Timeline Item 3 -->
-          <div class="timeline-item reveal reveal-delay-2">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[Semester 2 Milestone]</div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">[Establishment of Prototyping Labs & Grants]</h3>
-              <p style="font-size: 0.95rem; color: var(--text-muted);">
-                Secured dedicated laboratory space, compute credits, and launched micro-grants for undergraduate projects.
-              </p>
-              <span class="placeholder-tag" style="margin-top: 0.75rem;">[Replace with Milestone Details]</span>
-            </div>
-          </div>
-
-          <!-- Timeline Item 4 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot" style="border-color: var(--color-violet); box-shadow: 0 0 15px var(--color-violet);"></div>
-            <div class="timeline-content" style="border-color: rgba(139, 92, 246, 0.4);">
-              <div class="timeline-date" style="color: #c084fc;">[Newly Launched]</div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Launch of Curiominds Platform</h3>
-              <p style="font-size: 0.95rem; color: var(--text-muted);">
-                Unveiled the Curiominds initiative to nurture grassroots curiosity, interdisciplinary thinking, and rapid problem-solving.
-              </p>
-              <span class="badge badge-violet" style="margin-top: 0.75rem;">✨ Active Flagship Platform</span>
-            </div>
-          </div>
-
-          <!-- Timeline Item 5 -->
-          <div class="timeline-item reveal reveal-delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">[Future Roadmap]</div>
-              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">[Global Research Exchange & Venture Incubator]</h3>
-              <p style="font-size: 0.95rem; color: var(--text-muted);">
-                Expanding publication mentorship and establishing formal incubation pathways for student intellectual property.
-              </p>
-              <span class="placeholder-tag" style="margin-top: 0.75rem;">[Future Roadmap Placeholder]</span>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+
+
+      <!-- Scroll hint -->
+
+      <div class="journey-scroll-hint">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        <span>Scroll to explore the journey</span>
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- ==========================================================================
          Section: CTA
