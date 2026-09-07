@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Research Council (SRC) — Where Innovation Meets Reality. Empowering students to explore ideas, conduct research, build innovative solutions, and transform concepts into real-world impact.">
+  <meta name="keywords" content="Student Research Council, SRC, Curiominds, University Research, Innovation, Hackathons, Student Projects, DeepTech">
+  <title>Student Research Council | Where Innovation Meets Reality</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    .hero-highlight-icon i,
+    .card-icon-box i {
+      font-size: 1em;
+      line-height: 1;
+    }
+
+    .curiominds-badge-new i,
+    .event-date-chip i,
+    .event-location-pill i {
+      margin-right: 0.35rem;
+    }
+
+    .event-card-media > div:first-child i {
+      font-size: inherit;
+    }
+
+    .curiominds-spotlight-banner i {
+      line-height: 1;
+    }
+  
+    /* =========================================================
+       INDEX PAGE — CLEAN TEXT JUSTIFICATION
+       Keeps paragraph/list lines aligned on both sides.
+       ========================================================= */
+    .index-content p,
+    .index-content .feature-list-item > span:last-child,
+    .index-content .event-desc,
+    .index-content .visualizer-card-desc,
+    .index-content .footer-bio {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  </style>
+
+
+<style>
+/* ============================================================
+   INDEX PAGE — REDUCE GAP AFTER "WHO WE ARE"
+   The generic .section has large top/bottom padding.
+   Reduce only this transition so the Events section sits closer.
+============================================================ */
+
+#who-we-are {
+  padding-bottom: 2.5rem !important;
+}
+
+#who-we-are + .section {
+  padding-top: 2.5rem !important;
+}
+
+/* Keep mobile spacing comfortable */
+@media (max-width: 700px) {
+  #who-we-are {
+    padding-bottom: 2rem !important;
+  }
+
+  #who-we-are + .section {
+    padding-top: 2rem !important;
+  }
+}
+</style>
+
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header & Navigation
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Student Research Council Home">
+        <div class="logo-icon">
+           <img src="srclogo.jpeg" alt="SRC Student Research Council Logo">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SRC</span>
+          <span class="brand-sub">Research Council</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About SRC</a></li>
+          <li class="nav-item"><a href="events.html">Events</a></li>
+         
+          <li class="nav-item"><a href="team.html">Team</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+           <li class="nav-item">
+            <a href="curiominds.html">
+              Curiominds
+              <span class="badge-nav-new">NEW</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm btn-shimmer btn-desktop-only">Join SRC →</a>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-overlay"></div>
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li class="mobile-nav-item active"><a href="index.html">Home <span>→</span></a></li>
+      <li class="mobile-nav-item"><a href="about.html">About SRC <span>→</span></a></li>
+      <li class="mobile-nav-item"><a href="events.html">Events <span>→</span></a></li>
+      <li class="mobile-nav-item">
+        <a href="curiominds.html">
+          Curiominds <span class="badge-nav-new" style="vertical-align: middle;">NEW</span> <span>→</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item"><a href="team.html">Leadership & Team <span>→</span></a></li>
+      <li class="mobile-nav-item"><a href="contact.html">Contact Us <span>→</span></a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="contact.html" class="btn btn-primary btn-full">Join Council Movement</a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Main Content
+       ========================================================================== -->
+  <main id="main-content" class="index-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Hero Introduction">
+      <!-- Interactive Constellation Canvas -->
+      <canvas id="hero-canvas"></canvas>
+
+      <div class="container hero-content">
+        <div class="hero-council-badge reveal">
+          <span class="hero-badge-pulse"></span>
+          <span class="hero-badge-text">Official Student Research Council</span>
+        </div>
+
+        <h1 class="hero-title reveal reveal-delay-1">
+          Student Research Council
+        </h1>
+
+        <div class="hero-tagline reveal reveal-delay-2">
+          <span class="text-gradient">Where Innovation Meets Reality</span>
+        </div>
+
+        <p class="hero-subtitle reveal reveal-delay-3">
+          Empowering students to explore ideas, conduct research, build innovative solutions, and transform concepts into real-world impact.
+        </p>
+
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="#who-we-are" class="btn btn-primary btn-lg btn-shimmer">
+            Explore SRC
+            <span>↓</span>
+          </a>
+        </div>
+
+        <!-- Quick Metrics / Highlights Strip -->
+        <div class="hero-highlights-strip reveal reveal-delay-5">
+          <div class="hero-highlight-item">
+            <span class="hero-highlight-icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
+            <span>Interdisciplinary Research</span>
+          </div>
+          <div class="hero-highlight-item">
+            <span class="hero-highlight-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+            <span>Hands-on Prototyping</span>
+          </div>
+          <div class="hero-highlight-item">
+            <span class="hero-highlight-icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+            <span>Funded Hackathons & Grants</span>
+          </div>
+          <div class="hero-highlight-item">
+            <span class="hero-highlight-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+            <span>Global Academic Mentorship</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+        <!--Section: SRC Impact & Statistics
+         ========================================================================== -->
+    <section class="section" style="background: rgba(11, 17, 32, 0.4);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Council Metrics</span>
+          <h2 class="section-title">Impact by the <span class="text-gradient">Numbers</span></h2>
+          <p class="section-description">
+            Driving academic growth and practical technological engagement across our student body.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <!-- Stat 1 -->
+          <div class="glass-card stat-card reveal">
+            <div class="stat-number" data-counter-target="15" data-counter-suffix="+">0</div>
+            <div class="stat-label">Events Conducted</div>
+            <span class="stat-placeholder-badge">[Replace with Verified Count]</span>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="glass-card stat-card reveal reveal-delay-1">
+            <div class="stat-number" data-counter-target="1200" data-counter-suffix="+">0</div>
+            <div class="stat-label">Students Engaged</div>
+            <span class="stat-placeholder-badge">[Replace with Verified Count]</span>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="glass-card stat-card reveal reveal-delay-2">
+            <div class="stat-number" data-counter-target="45" data-counter-suffix="+">0</div>
+            <div class="stat-label">Research Initiatives</div>
+            <span class="stat-placeholder-badge">[Replace with Verified Count]</span>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="glass-card stat-card reveal reveal-delay-3">
+            <div class="stat-number" data-counter-target="30" data-counter-suffix="+">0</div>
+            <div class="stat-label">Innovative Projects Built</div>
+            <span class="stat-placeholder-badge">[Replace with Verified Count]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Who We Are
+         ========================================================================== -->
+    <section class="section" id="who-we-are">
+      <div class="container">
+        <div class="split-grid">
+          <!-- Text Content -->
+          <div class="reveal">
+            <span class="section-tag">Who We Are</span>
+            <h2 class="section-title">
+              Pioneering Student-Led <span class="text-gradient">Scientific Discovery</span>
+            </h2>
+            <p style="margin-bottom: 1.25rem;">
+              The <strong>Student Research Council (SRC)</strong> is a premier student-driven research and innovation council. We bridge the gap between academic theories and tangible breakthroughs, providing students across all disciplines with the platform, resources, and mentorship to push frontiers.
+            </p>
+            <p>
+              At SRC, students are empowered to collaborate, experiment fearlessly, and convert intellectual curiosity into real-world solutions that impact society:
+            </p>
+
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Explore cutting-edge research</strong> in emerging technology paradigms.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Develop innovative ideas</strong> with structured faculty mentorship.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Participate in national & global competitions</strong>, hackathons, and symposia.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Attend technical workshops</strong>, paper reading groups, and lab bootcamps.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Collaborate across disciplines</strong> with peer researchers and developers.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Convert theoretical ideas into practical solutions</strong> and patentable prototypes.</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-check-icon">✓</span>
+                <span><strong>Develop vital problem-solving & publication skills</strong> for academia and industry.</span>
+              </li>
+            </ul>
+
+            <div style="margin-top: 2rem;">
+              <a href="about.html" class="btn btn-outline">Read Our Full Story & Vision →</a>
+            </div>
+          </div>
+
+          <!-- Research Visualizer Graphic -->
+          <div class="research-visualizer reveal reveal-delay-2">
+            <div class="visualizer-header">
+              <div class="visualizer-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="placeholder-tag">SRC Innovation Engine</span>
+            </div>
+
+            <div class="visualizer-nodes-container">
+              <div class="visualizer-mini-card">
+                <div class="visualizer-card-num">PHASE 01</div>
+                <div class="visualizer-card-title">Curiosity & Inquiry</div>
+                <div class="visualizer-card-desc">Formulating research hypotheses from everyday questions.</div>
+              </div>
+              <div class="visualizer-mini-card">
+                <div class="visualizer-card-num">PHASE 02</div>
+                <div class="visualizer-card-title">Literature & Rigor</div>
+                <div class="visualizer-card-desc">Comprehensive literature analysis and scientific validation.</div>
+              </div>
+              <div class="visualizer-mini-card">
+                <div class="visualizer-card-num">PHASE 03</div>
+                <div class="visualizer-card-title">Rapid Prototyping</div>
+                <div class="visualizer-card-desc">Hardware/software testbeds and experimental sandbox runs.</div>
+              </div>
+              <div class="visualizer-mini-card">
+                <div class="visualizer-card-num">PHASE 04</div>
+                <div class="visualizer-card-title">Real-World Impact</div>
+                <div class="visualizer-card-desc">Publishing papers, pitching to incubators, and product deployment.</div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0, 210, 255, 0.05); border: 1px dashed rgba(0, 210, 255, 0.25); border-radius: var(--radius-md); text-align: center;">
+              <span style="font-family: var(--font-mono); font-size: 0.825rem; color: var(--color-cyan);">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i> Open to all undergraduate & postgraduate students
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         Section: Featured Events Preview
+         ========================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Calendar Highlights</span>
+          <h2 class="section-title">Upcoming & Flagship <span class="text-gradient">Events</span></h2>
+          <p class="section-description">
+            Participate in symposia, research workshops, deep-tech hackathons, and Curiominds challenges.
+          </p>
+        </div>
+
+        <!-- Static featured preview cards linking directly to events.html -->
+        <div class="events-grid">
+          <!-- Event 1 -->
+
+           <article class="event-card reveal reveal-delay-2">
+<div class="event-card-media">
+  <img 
+    src="event-img/clashofminds.png"
+    alt="Clash Of Minds"
+    class="event-card-image"
+  >
+
+  <div class="event-image-overlay"></div>
+
+  <div class="event-status-badge">
+    <span class="badge badge-emerald">● Upcoming</span>
+  </div>
+</div>
+            <div class="event-card-body">
+              
+              <h3 class="event-title">Clash Of Minds</h3>
+              <p class="event-desc">Clash of Minds is an engaging platform where students exchange ideas, participate in healthy debates, and showcase their creativity, critical thinking, and problem-solving skills.</p>
+              <div class="event-card-footer">
+               
+                <a href="events.html" class="btn btn-outline btn-sm">View Details →</a>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Event 2 -->
+          <article class="event-card reveal reveal-delay-1">
+<div class="event-card-media">
+  <img 
+    src="event-img/hackathon.png"
+    alt="AI & Robotics Hackathon"
+    class="event-card-image"
+  >
+
+  <div class="event-image-overlay"></div>
+</div>
+            <div class="event-card-body">
+             
+              <h3 class="event-title">AI & Robotics Hackathon</h3>
+              <p class="event-desc">A technology-focused hackathon bringing together students to explore artificial intelligence, robotics, and innovative problem solving.</p>
+              <div class="event-card-footer">
+               
+                <a href="events.html" class="btn btn-outline btn-sm">View Details →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Event 3 -->
+           <article class="event-card reveal">
+            <div class="event-card-media">
+  <img 
+    src="event-img/digitod-visit.png"
+    alt="Binary Battles"
+    class="event-card-image"
+  >
+
+  <div class="event-image-overlay"></div>
+
+  <div class="event-status-badge">
+    <span class="badge badge-emerald">● Upcoming</span>
+  </div>
+</div>
+            <div class="event-card-body">
+              
+              <h3 class="event-title">Digitod Visit</h3>
+              
+              <p class="event-desc">An educational visit offering students exposure to real-world technology, innovation, and professional practices.</p>
+              <div class="event-card-footer">
+               
+                <a href="events.html" class="btn btn-outline btn-sm">View Details →</a>
+              </div>
+            </div>
+          </article>
+
+         
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" class="reveal">
+          <a href="events.html" class="btn btn-primary">Browse All Events & Filter by Category →</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- ==========================================================================
+         Section: What SRC Does (From Ideas to Impact)
+         ========================================================================== -->
+    <section class="section" style="background: rgba(8, 14, 28, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Council Domains</span>
+          <h2 class="section-title">From Ideas to <span class="text-gradient">Impact</span></h2>
+          <p class="section-description">
+            We provide an end-to-end framework that accelerates student concepts from raw curiosity into verified scientific models and scalable solutions.
+          </p>
+        </div>
+
+        <div class="what-we-do-grid">
+          <!-- Card 1: Research -->
+          <div class="glass-card reveal">
+            <div class="card-icon-box"><i class="fa-solid fa-flask" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Research</h3>
+            <p>
+              Encouraging students to explore deep-tech questions, scientific paradigms, and emerging technologies through systematic methodology and faculty guidance.
+            </p>
+          </div>
+
+          <!-- Card 2: Innovation -->
+          <div class="glass-card reveal reveal-delay-1">
+            <div class="card-icon-box"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Innovation</h3>
+            <p>
+              Turning creative sparks and abstract ideas into meaningful solutions and functional MVPs designed to resolve critical real-world challenges.
+            </p>
+          </div>
+
+          <!-- Card 3: Collaboration -->
+          <div class="glass-card reveal reveal-delay-2">
+            <div class="card-icon-box"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Collaboration</h3>
+            <p>
+              Connecting students, dedicated faculty advisors, industry researchers, and cross-department innovators into high-synergy research pods.
+            </p>
+          </div>
+
+          <!-- Card 4: Competitions -->
+          <div class="glass-card reveal">
+            <div class="card-icon-box"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Competitions</h3>
+            <p>
+              Providing competitive platforms, ideathons, and national hackathons where students benchmark, defend, and showcase their inventions.
+            </p>
+          </div>
+
+          <!-- Card 5: Workshops -->
+          <div class="glass-card reveal reveal-delay-1">
+            <div class="card-icon-box"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Workshops</h3>
+            <p>
+              Hands-on learning through intensive technical bootcamps, scientific LaTeX drafting masterclasses, and experimental laboratory sessions.
+            </p>
+          </div>
+
+          <!-- Card 6: Entrepreneurship -->
+          <div class="glass-card reveal reveal-delay-2">
+            <div class="card-icon-box"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+            <h3 style="margin-bottom: 0.75rem;">Entrepreneurship</h3>
+            <p>
+              Encouraging student investigators to transform laboratory breakthroughs and intellectual property into viable, venture-backed startup opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       
+
+    <!-- ==========================================================================
+     
+    <!-- ==========================================================================
+         Section: Call to Action Banner
+         ========================================================================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner-card reveal">
+          <span class="section-tag">Get Involved</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1rem;">
+            Ready to Pioneer the Next <span class="text-gradient">Breakthrough?</span>
+          </h2>
+          <p style="max-width: 620px; margin: 0 auto 2rem; font-size: 1.1rem; color: var(--text-secondary);">
+            Whether you have a spark of an idea or an advanced research prototype, the Student Research Council provides the platform, mentorship, and peers to bring it to reality.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg btn-shimmer">Join SRC Today</a>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-icon">
+               <img src="srclogo.jpeg" alt="SRC Student Research Council Logo">
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">SRC</span>
+              <span class="brand-sub">Student Research Council</span>
+            </div>
+          </a>
+          <div class="footer-tagline">"Where Innovation Meets Reality"</div>
+          <p class="footer-bio">
+            Official university research and innovation council dedicated to student-led scientific exploration, technical development, and impactful solutions.
+          </p>
+          <div class="social-links-grid">
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-icon-btn" aria-label="GitHub">gh</a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-icon-btn" aria-label="Discord">dc</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About SRC</a></li>
+            <li><a href="events.html">Events & Workshops</a></li>
+            <li><a href="curiominds.html">Curiominds Platform</a></li>
+            <li><a href="team.html">Leadership & Team</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Council Pillars -->
+        <div class="footer-col">
+          <h4>Pillars</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#values">Scientific Rigor</a></li>
+            <li><a href="curiominds.html">Grassroots Curiosity</a></li>
+            <li><a href="events.html">Symposia & Hackathons</a></li>
+            <li><a href="team.html">Student Leadership</a></li>
+            <li><a href="about.html#lifecycle">Prototyping Labs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Official Council Desk:
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-cyan); margin-bottom: 0.75rem;">
+            [SRC Email: contact@src-council.edu]
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-subtle); margin-bottom: 1rem;">
+            [University Research Hub, Block B]
+          </div>
+          <a href="contact.html" class="btn btn-outline btn-sm">Send an Inquiry →</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Student Research Council (SRC). All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="about.html">Council Charter</a>
+          <a href="contact.html">Privacy & Ethics</a>
+          <a href="curiominds.html">Curiominds</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/canvas-nodes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
