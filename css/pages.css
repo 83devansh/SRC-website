@@ -1,0 +1,2290 @@
+/* ==========================================================================
+   SRC - Page-Specific Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   HOME PAGE: HERO SECTION
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.hero-council-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.15rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.75rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+}
+
+.hero-badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 10px var(--color-cyan);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.5; }
+}
+
+.hero-badge-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5.5vw + 0.5rem, 4.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: clamp(1.35rem, 2.8vw + 0.2rem, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.3vw + 0.2rem, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 740px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Quick Features Ticker in Hero */
+.hero-highlights-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  flex-wrap: wrap;
+  padding: 1.25rem 2rem;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(14px);
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.hero-highlight-icon {
+  font-size: 1.2rem;
+  color: var(--color-cyan);
+}
+
+/* ==========================================================================
+   WHO WE ARE SECTION (Split Layout)
+   ========================================================================== */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.split-grid.reversed {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 1.75rem;
+}
+
+.feature-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.feature-check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cyan);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Interactive Visualizer Card for About/Who-We-Are */
+.research-visualizer {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(20, 30, 55, 0.8));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 210, 255, 0.1);
+}
+
+.visualizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.visualizer-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.visualizer-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.visualizer-dots span:nth-child(1) { background: #f43f5e; }
+.visualizer-dots span:nth-child(2) { background: #f59e0b; }
+.visualizer-dots span:nth-child(3) { background: #10b981; }
+
+.visualizer-nodes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.visualizer-mini-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  transition: all var(--transition-normal);
+}
+
+.visualizer-mini-card:hover {
+  background: rgba(0, 210, 255, 0.06);
+  border-color: rgba(0, 210, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.visualizer-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-cyan);
+  margin-bottom: 0.35rem;
+}
+
+.visualizer-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.visualizer-card-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   WHAT SRC DOES: 6 CARDS GRID
+   ========================================================================== */
+.what-we-do-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+/* ==========================================================================
+   NEWLY LAUNCHED: CURIOMINDS SPOTLIGHT
+   ========================================================================== */
+.curiominds-spotlight-banner {
+  background: linear-gradient(135deg, rgba(30, 20, 55, 0.9), rgba(15, 23, 42, 0.95), rgba(20, 35, 65, 0.9));
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.18);
+}
+
+.curiominds-spotlight-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.1) 40%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.curiominds-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.curiominds-badge-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f472b6;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+.curiominds-spotlight-title {
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.curiominds-spotlight-tagline {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #c084fc;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   CURIOMINDS DEDICATED PAGE
+   ========================================================================== */
+.curiominds-hero-bg {
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.06) 40%, transparent 70%);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pillar-card {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background: rgba(20, 16, 38, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(236, 72, 153, 0.45);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
+  background: rgba(30, 22, 56, 0.85);
+}
+
+.pillar-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   ABOUT PAGE: RESEARCH METHODOLOGY / LIFECYCLE
+   ========================================================================== */
+.lifecycle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+}
+
+.lifecycle-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.lifecycle-step:hover {
+  border-color: rgba(0, 210, 255, 0.35);
+  transform: translateY(-4px);
+}
+
+.lifecycle-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(139, 92, 246, 0.2));
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-cyan);
+  margin-bottom: 1.15rem;
+}
+
+/* ==========================================================================
+   CONTACT PAGE: SPLIT LAYOUT
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.contact-info-card:hover {
+  border-color: rgba(0, 210, 255, 0.35);
+  transform: translateX(4px);
+}
+
+.contact-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 210, 255, 0.1);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+}
+
+/* CTA Card Banner */
+.cta-banner-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(20, 32, 60, 0.9));
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.15);
+}
+
+/* ==========================================================================
+   Responsive Overrides for Pages
+   ========================================================================== */
+@media (max-width: 980px) {
+  .split-grid, .split-grid.reversed, .curiominds-spotlight-grid, .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .visualizer-nodes-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .visualizer-nodes-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-highlights-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   SRC TEAM PAGE
+   FOUNDERS + MEMBERS OF SRC
+============================================================ */
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.team-container {
+    width: min(1320px, calc(100% - 5rem));
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   FOUNDERS SECTION
+============================================================ */
+
+.founders-section {
+    background: #f8f5ed;
+    padding: 2.5rem 0 2.75rem;
+}
+
+.team-section-label {
+    color: #0b2a55;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Founders side by side */
+
+.founders-grid {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+
+/* Individual founder */
+
+.founder-person {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* Founder image */
+
+.founder-photo {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #e7e1d4;
+}
+
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Founder text */
+
+.founder-info h3 {
+    margin: 0 0 0.45rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.founder-info p {
+    margin: 0;
+
+    color: #48627d;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   MEMBERS SECTION
+============================================================ */
+
+.members-section {
+    background: #ffffff;
+    padding: 2.75rem 0 3rem;
+}
+
+
+/* Heading */
+
+.members-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1.5rem;
+}
+
+.members-heading h2 {
+    margin: 0;
+
+    color: #092957;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+}
+
+
+/* Shoolini University logo */
+
+.shoolini-logo img {
+    width: 125px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* ============================================================
+   THREE BOARD COLUMNS
+============================================================ */
+
+.board-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+
+    align-items: stretch;
+}
+
+
+/* Board card */
+
+.board-column {
+    border-radius: 12px;
+    overflow: hidden;
+
+    background: #faf7ef;
+
+    min-width: 0;
+}
+
+
+/* ============================================================
+   BOARD HEADERS
+============================================================ */
+
+.board-title {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.75rem 1rem;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+}
+
+
+/* Board of Regents */
+
+.board-blue .board-title {
+    background: #1d2d50;
+}
+
+
+/* Executive Board */
+
+.board-red .board-title {
+    background: #b71936;
+}
+
+
+/* R&D + Finance */
+
+.board-slate .board-title {
+    background: #477691;
+}
+
+
+/* ============================================================
+   MEMBER LIST
+============================================================ */
+
+.member-list {
+    padding: 1.4rem 1.1rem 1.25rem;
+}
+
+
+/* Individual member */
+
+.member {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9rem;
+
+    min-height: 70px;
+
+    margin-bottom: 0.55rem;
+
+    transition: transform 0.2s ease;
+}
+
+.member:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Member photo */
+
+.member img {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #e8e3d9;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Member name */
+
+.member h4 {
+    margin: 0 0 0.3rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.96rem;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+}
+
+
+/* Member designation */
+
+.member p {
+    margin: 0;
+
+    color: #415d7a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.73rem;
+
+    line-height: 1.35;
+}
+
+
+/* ============================================================
+   HOVER EFFECT
+============================================================ */
+
+.member:hover {
+    transform: translateX(4px);
+}
+
+.member:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET
+============================================================ */
+
+@media (max-width: 1050px) {
+
+    .team-container {
+        width: min(100% - 2.5rem, 900px);
+    }
+
+    .board-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founders-grid {
+        gap: 4rem;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 650px) {
+
+    .team-container {
+        width: min(100% - 2rem, 520px);
+    }
+
+
+    /* Founders */
+
+    .founders-section {
+        padding: 2rem 0;
+    }
+
+    .founders-grid {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.5rem;
+    }
+
+    .founder-photo {
+        width: 82px;
+        height: 82px;
+    }
+
+
+    /* Members heading */
+
+    .members-heading {
+        align-items: flex-start;
+
+        gap: 1rem;
+    }
+
+    .members-heading h2 {
+        font-size: 2rem;
+    }
+
+    .shoolini-logo img {
+        width: 100px;
+    }
+
+
+    /* Members */
+
+    .member-list {
+        padding: 1.2rem 1rem;
+    }
+
+    .member img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .member h4 {
+        font-size: 0.9rem;
+    }
+
+    .member p {
+        font-size: 0.7rem;
+    }
+}
+
+/* ============================================================
+   SRC — HORIZONTAL JOURNEY
+   Desktop:
+   Vertical page scroll -> Horizontal Journey
+
+   Mobile:
+   Native horizontal swipe
+============================================================ */
+
+.journey-section {
+  position: relative;
+  width: 100%;
+
+  /*
+    IMPORTANT:
+    Do NOT use overflow:hidden here.
+    It breaks position:sticky.
+  */
+  overflow: visible;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 210, 255, 0.045),
+      transparent 55%
+    );
+}
+
+
+/* ============================================================
+   HEADING
+============================================================ */
+
+.journey-heading {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ============================================================
+   SCROLL AREA
+============================================================ */
+
+.journey-scroll-area {
+  position: relative;
+
+  /*
+    JavaScript calculates the exact height.
+    DO NOT use 390vh / 350vh here.
+  */
+  height: auto;
+}
+
+
+/* ============================================================
+   STICKY VIEWPORT
+============================================================ */
+
+.journey-sticky {
+  position: sticky;
+
+  /*
+    Header is fixed at the top.
+    Keep Journey below it.
+  */
+  top: 70px;
+
+  width: 100%;
+
+  height: calc(100vh - 70px);
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   TRACK VIEWPORT
+============================================================ */
+
+.journey-track-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 500px;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   HORIZONTAL TRACK
+============================================================ */
+
+.journey-track {
+
+  --card-width: clamp(
+    280px,
+    22vw,
+    360px
+  );
+
+  --journey-gap: clamp(
+    3rem,
+    7vw,
+    7rem
+  );
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  height: 100%;
+
+  gap: var(--journey-gap);
+
+  /*
+    Keep the first and last cards comfortably
+    inside the screen.
+  */
+  padding-left: max(
+    5vw,
+    calc((100vw - 1280px) / 2)
+  );
+
+  padding-right: max(
+    5vw,
+    calc((100vw - 1280px) / 2)
+  );
+
+  will-change: transform;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: transform 80ms linear;
+}
+
+
+/* ============================================================
+   HORIZONTAL LINE
+============================================================ */
+
+.journey-line {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  height: 2px;
+
+  transform: translateY(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 210, 255, 0.08),
+      rgba(0, 210, 255, 0.28),
+      rgba(139, 92, 246, 0.28),
+      rgba(0, 210, 255, 0.08)
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* ============================================================
+   PROGRESS LINE
+============================================================ */
+
+.journey-line-progress {
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 0;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-cyan),
+      var(--color-blue),
+      var(--color-violet)
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(0, 210, 255, 0.75);
+
+  transition:
+    width 80ms linear;
+}
+
+
+/* ============================================================
+   JOURNEY ITEM
+============================================================ */
+
+.journey-item {
+
+  position: relative;
+
+  flex: 0 0 var(--card-width);
+
+  width: var(--card-width);
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  z-index: 3;
+}
+
+
+/* ============================================================
+   TOP CARDS
+============================================================ */
+
+.journey-item-top {
+  padding-bottom: 245px;
+}
+
+
+/* ============================================================
+   BOTTOM CARDS
+============================================================ */
+
+.journey-item-bottom {
+  padding-top: 245px;
+}
+
+
+/* ============================================================
+   CARD
+============================================================ */
+
+.journey-card {
+
+  width: 100%;
+
+  padding: clamp(
+    1.15rem,
+    1.8vw,
+    1.6rem
+  );
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(9, 15, 29, 0.94)
+    );
+
+  border:
+    1px solid
+    var(--border-subtle);
+
+  border-radius:
+    var(--radius-lg);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  opacity: 0.28;
+
+  transform:
+    scale(0.88)
+    translateY(18px);
+
+  transition:
+    opacity 0.55s
+      cubic-bezier(0.16, 1, 0.3, 1),
+
+    transform 0.55s
+      cubic-bezier(0.16, 1, 0.3, 1),
+
+    border-color 0.55s ease,
+
+    box-shadow 0.55s ease;
+}
+
+
+/* ============================================================
+   ACTIVE CARD
+============================================================ */
+
+.journey-item.active .journey-card {
+
+  opacity: 1;
+
+  transform:
+    scale(1)
+    translateY(0);
+
+  border-color:
+    rgba(0, 210, 255, 0.55);
+
+  box-shadow:
+    0 20px 50px
+      rgba(0, 0, 0, 0.45),
+
+    0 0 30px
+      rgba(0, 210, 255, 0.12);
+}
+
+
+/* ============================================================
+   FEATURED CURIOMINDS
+============================================================ */
+
+.journey-item-featured .journey-card {
+
+  border-color:
+    rgba(139, 92, 246, 0.3);
+}
+
+
+.journey-item-featured.active .journey-card {
+
+  border-color:
+    rgba(139, 92, 246, 0.7);
+
+  box-shadow:
+    0 20px 50px
+      rgba(0, 0, 0, 0.45),
+
+    0 0 35px
+      rgba(139, 92, 246, 0.2);
+}
+
+
+/* ============================================================
+   JOURNEY NODE
+============================================================ */
+
+.journey-node {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    2px solid
+    var(--color-cyan);
+
+  border-radius: 50%;
+
+  background:
+    var(--bg-dark);
+
+  box-shadow:
+    0 0 0 5px
+      rgba(0, 210, 255, 0.08),
+
+    0 0 18px
+      rgba(0, 210, 255, 0.8);
+
+  z-index: 10;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+
+.journey-node span {
+
+  position: absolute;
+
+  inset: 4px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-cyan);
+}
+
+
+.journey-item.active .journey-node {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.35);
+
+  box-shadow:
+    0 0 0 7px
+      rgba(0, 210, 255, 0.08),
+
+    0 0 28px
+      rgba(0, 210, 255, 1);
+}
+
+
+/* ============================================================
+   FEATURED NODE
+============================================================ */
+
+.journey-item-featured .journey-node {
+
+  border-color:
+    var(--color-violet);
+
+  box-shadow:
+    0 0 0 5px
+      rgba(139, 92, 246, 0.08),
+
+    0 0 20px
+      rgba(139, 92, 246, 0.85);
+}
+
+
+.journey-item-featured .journey-node span {
+
+  background:
+    var(--color-violet);
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+============================================================ */
+
+.journey-placeholder {
+
+  display: inline-flex;
+
+  width: fit-content;
+
+  margin-top: 1rem;
+
+  padding:
+    0.3rem 0.65rem;
+
+  border:
+    1px dashed
+    rgba(59, 130, 246, 0.4);
+
+  border-radius:
+    var(--radius-sm);
+
+  color:
+    #93c5fd;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.62rem;
+}
+
+
+/* ============================================================
+   ACTIVE BADGE
+============================================================ */
+
+.journey-active-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  width: fit-content;
+
+  margin-top: 1rem;
+
+  padding:
+    0.3rem 0.7rem;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.4);
+
+  border-radius:
+    var(--radius-full);
+
+  background:
+    rgba(139, 92, 246, 0.15);
+
+  color:
+    #c084fc;
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   SCROLL HINT
+============================================================ */
+
+.journey-scroll-hint {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 1.5rem;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  color:
+    var(--text-subtle);
+
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.68rem;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.08em;
+
+  white-space:
+    nowrap;
+
+  z-index: 20;
+}
+
+
+.journey-scroll-hint i {
+
+  color:
+    var(--color-cyan);
+
+}
+
+
+/* ============================================================
+   LAPTOP
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .journey-track {
+
+    --card-width:
+      clamp(
+        260px,
+        24vw,
+        320px
+      );
+
+    --journey-gap:
+      clamp(
+        2.5rem,
+        5vw,
+        5rem
+      );
+
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+
+  .journey-track-wrapper {
+
+    height: 470px;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 225px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 225px;
+  }
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 860px) {
+
+  .journey-track {
+
+    --card-width: 280px;
+
+    --journey-gap: 3rem;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+
+  .journey-card {
+
+    padding: 1.15rem;
+  }
+
+
+  .journey-track-wrapper {
+
+    height: 450px;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 215px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 215px;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+  .journey-section {
+
+    overflow: visible;
+  }
+
+
+  .journey-scroll-area {
+
+    height: auto !important;
+
+    padding-bottom: 2rem;
+  }
+
+
+  .journey-sticky {
+
+    position: relative;
+
+    top: auto;
+
+    height: auto;
+
+    min-height: 0;
+
+    display: block;
+
+    overflow: visible;
+  }
+
+
+  .journey-track-wrapper {
+
+    width: 100%;
+
+    height: 450px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-snap-type:
+      x mandatory;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width: thin;
+  }
+
+
+  .journey-track {
+
+    width: max-content;
+
+    height: 450px;
+
+    gap: 2rem;
+
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    transform: none !important;
+
+    transition: none;
+  }
+
+
+  .journey-item {
+
+    flex:
+      0 0 280px;
+
+    width: 280px;
+
+    height: 450px;
+
+    scroll-snap-align:
+      center;
+  }
+
+
+  .journey-card {
+
+    width: 280px;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+
+  .journey-item-top {
+
+    padding-bottom: 215px;
+  }
+
+
+  .journey-item-bottom {
+
+    padding-top: 215px;
+  }
+
+
+  .journey-scroll-hint {
+
+    display: none;
+  }
+
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 380px) {
+
+  .journey-track {
+
+    gap: 1.5rem;
+  }
+
+
+  .journey-item {
+
+    flex-basis: 255px;
+
+    width: 255px;
+  }
+
+
+  .journey-card {
+
+    width: 255px;
+  }
+
+}
+
+/* ============================================================
+   INDEX PAGE - REDUCE HERO TO EVENTS GAP
+============================================================ */
+
+#upcoming-events {
+    padding-top: 3rem !important;
+}
+
+#upcoming-events .section-header {
+    margin-top: 0;
+}
+
+/* Reduce bottom space of the hero */
+.hero-section {
+    padding-bottom: 2rem !important;
+}
+
+/* =========================================================
+   EVENT CARD IMAGES
+   ========================================================= */
+
+.event-card-media {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.event-card-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-card-image {
+  transform: scale(1.06);
+}
+
+.event-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.55)
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   PRESIDENT & VICE PRESIDENT
+============================================================ */
+
+.leadership-section {
+    background: #f8f5ed;
+    padding: 2.5rem 0 3rem;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.leadership-person {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.leadership-photo {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #e7e1d4;
+
+    border: 3px solid rgba(9, 41, 87, 0.12);
+}
+
+.leadership-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leadership-info {
+    min-width: 0;
+}
+
+.leadership-role {
+    display: inline-block;
+
+    margin-bottom: 0.35rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    color: #477691;
+}
+
+.leadership-info h3 {
+    margin: 0 0 0.35rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.leadership-info p {
+    margin: 0;
+
+    color: #48627d;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   TEAM DROPDOWN SELECTOR
+============================================================ */
+
+.team-selector {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto 2.5rem;
+    z-index: 50;
+}
+
+.team-selector-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 1.25rem;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(9, 41, 87, 0.15);
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    box-shadow: 0 8px 24px rgba(9, 41, 87, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.team-selector-button:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(0, 210, 255, 0.45);
+
+    box-shadow:
+        0 12px 30px rgba(9, 41, 87, 0.12),
+        0 0 20px rgba(0, 210, 255, 0.08);
+}
+
+.selector-small {
+    display: block;
+
+    margin-bottom: 0.15rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    color: #477691;
+}
+
+.selector-title {
+    display: block;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.selector-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #f2f6fa;
+
+    color: #092957;
+
+    font-size: 1.4rem;
+
+    transition: transform 0.25s ease;
+}
+
+.team-selector.open .selector-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* ============================================================
+   DROPDOWN
+============================================================ */
+
+.team-dropdown {
+    position: absolute;
+
+    top: calc(100% + 0.65rem);
+    left: 0;
+    right: 0;
+
+    padding: 0.5rem;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid rgba(9, 41, 87, 0.12);
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 45px rgba(9, 41, 87, 0.16);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.team-selector.open .team-dropdown {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   DROPDOWN OPTIONS
+============================================================ */
+
+.team-option {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.85rem;
+
+    padding: 0.85rem 0.9rem;
+
+    background: transparent;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.team-option:hover {
+    background: #f2f7fa;
+
+    transform: translateX(3px);
+}
+
+.option-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #edf5f8;
+
+    color: #477691;
+
+    font-size: 1rem;
+}
+
+.team-option strong {
+    display: block;
+
+    margin-bottom: 0.15rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.team-option small {
+    display: block;
+
+    color: #71849a;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+}
+
+
+/* ============================================================
+   DEFAULT PLACEHOLDER
+============================================================ */
+
+.team-selection-placeholder {
+    max-width: 650px;
+
+    margin: 0 auto 2rem;
+
+    padding: 3rem 2rem;
+
+    text-align: center;
+
+    background: #fafafa;
+
+    border: 1px dashed rgba(9, 41, 87, 0.18);
+
+    border-radius: 16px;
+}
+
+.placeholder-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 1rem;
+
+    border-radius: 50%;
+
+    background: #edf5f8;
+
+    color: #477691;
+
+    font-size: 1.4rem;
+}
+
+.team-selection-placeholder h3 {
+    margin-bottom: 0.4rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+}
+
+.team-selection-placeholder p {
+    margin: 0;
+
+    color: #71849a;
+
+    font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   TEAM PANELS
+============================================================ */
+
+.team-panel {
+    display: none;
+
+    margin-top: 1.5rem;
+
+    animation: teamPanelIn 0.35s ease forwards;
+}
+
+.team-panel.active {
+    display: block;
+}
+
+@keyframes teamPanelIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ============================================================
+   PANEL HEADER
+============================================================ */
+
+.team-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1.25rem;
+
+    padding: 1rem 1.25rem;
+
+    border-radius: 12px;
+
+    background: #faf7ef;
+}
+
+.panel-label {
+    display: block;
+
+    margin-bottom: 0.25rem;
+
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    color: #477691;
+}
+
+.team-panel-header h3 {
+    margin: 0;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.35rem;
+}
+
+
+/* ============================================================
+   MEMBER CARD GRID
+============================================================ */
+
+.members-card-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0.75rem;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9rem;
+
+    min-height: 80px;
+
+    padding: 0.85rem 1rem;
+
+    background: #faf7ef;
+
+    border: 1px solid rgba(9, 41, 87, 0.06);
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(0, 210, 255, 0.25);
+
+    box-shadow:
+        0 8px 22px rgba(9, 41, 87, 0.09);
+}
+
+.member-card img {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #e8e3d9;
+}
+
+.member-card-info {
+    min-width: 0;
+}
+
+.member-card-info h4 {
+    margin: 0 0 0.25rem;
+
+    color: #092957;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.member-card-info p {
+    margin: 0;
+
+    color: #71849a;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .leadership-person {
+        gap: 1rem;
+    }
+
+    .leadership-photo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .team-selector {
+        margin-top: 1.5rem;
+    }
+
+    .members-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-selection-placeholder {
+        padding: 2.5rem 1.25rem;
+    }
+
+}
