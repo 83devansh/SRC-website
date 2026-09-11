@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SRC Admin | Contact Queries</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+
+    <div class="container nav-container">
+
+      <a href="index.html" class="brand-logo">
+
+        <div class="logo-icon">
+          <img
+            src="srclogo.jpeg"
+            alt="SRC Student Research Council Logo"
+          >
+        </div>
+
+        <div class="brand-text">
+          <span class="brand-name">SRC</span>
+          <span class="brand-sub">Admin Panel</span>
+        </div>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Login Section -->
+    <section
+      class="section"
+      id="admin-login-section"
+      style="padding-top: calc(var(--nav-height) + 5rem);"
+    >
+
+      <div class="container">
+
+        <div
+          class="glass-card"
+          style="
+            max-width: 500px;
+            margin: 0 auto;
+          "
+        >
+
+          <div class="section-header">
+
+            <span class="section-tag">
+              SRC Administration
+            </span>
+
+            <h1 class="section-title">
+              Admin <span class="text-gradient">Login</span>
+            </h1>
+
+            <p class="section-description">
+              Authorized personnel only.
+            </p>
+
+          </div>
+
+
+          <form id="admin-login-form">
+
+            <div class="form-group">
+
+              <label
+                for="admin-email"
+                class="form-label"
+              >
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="admin-email"
+                class="form-input"
+                placeholder="admin@gmail.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label
+                for="admin-password"
+                class="form-label"
+              >
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="admin-password"
+                class="form-input"
+                placeholder="Enter admin password"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-full"
+              id="admin-login-btn"
+            >
+              Login to Admin Panel →
+            </button>
+
+            <p
+              id="login-error"
+              style="
+                display: none;
+                margin-top: 1rem;
+                text-align: center;
+                color: #ff6b6b;
+              "
+            ></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Admin Dashboard -->
+    <section
+      class="section"
+      id="admin-dashboard"
+      style="display: none;"
+    >
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <span class="section-tag">
+            Administration
+          </span>
+
+          <h1 class="section-title">
+            Contact <span class="text-gradient">Queries</span>
+          </h1>
+
+          <p class="section-description">
+            View inquiries submitted through the SRC contact form.
+          </p>
+
+        </div>
+
+
+        <!-- Dashboard Top Bar -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+          "
+        >
+
+          <div id="query-count">
+            Loading queries...
+          </div>
+
+          <button
+            id="logout-btn"
+            class="btn btn-outline btn-sm"
+          >
+            Logout
+          </button>
+
+        </div>
+
+
+        <!-- Queries -->
+        <div id="queries-container">
+
+          <div class="glass-card">
+            Loading submissions...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/main.js"></script>
+
+  <script
+    type="module"
+    src="js/admin.js"
+  ></script>
+
+</body>
+
+</html>
