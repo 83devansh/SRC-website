@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Join the Student Research Council (SRC) — Choose your membership plan and become part of the research and innovation community.">
+
+  <title>Join SRC | Student Research Council</title>
+
+  <!-- Existing SRC Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+
+    /* =========================================================
+       JOIN PAGE HERO
+    ========================================================= */
+
+    .join-hero {
+      padding-top: calc(var(--nav-height) + 4rem);
+      padding-bottom: 4rem;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 20% 15%,
+          rgba(0, 210, 255, 0.14),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(139, 92, 246, 0.14),
+          transparent 35%
+        );
+    }
+
+
+    /* =========================================================
+       PLANS
+    ========================================================= */
+
+    .plans-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(280px, 1fr));
+
+      gap: 2rem;
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       PLAN CARD
+    ========================================================= */
+
+    .plan-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 2.2rem;
+
+      border-radius: var(--radius-lg);
+
+      background:
+        rgba(12, 20, 38, 0.82);
+
+      border:
+        1px solid rgba(148, 163, 184, 0.18);
+
+      box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.22);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .plan-card:hover {
+
+      transform:
+        translateY(-8px);
+
+      border-color:
+        rgba(0, 210, 255, 0.42);
+
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.32);
+    }
+
+
+    /* =========================================================
+       PREMIUM PLAN
+    ========================================================= */
+
+    .plan-card.featured {
+
+      border:
+        1px solid rgba(139, 92, 246, 0.55);
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(139, 92, 246, 0.12),
+          rgba(12, 20, 38, 0.88) 45%
+        );
+    }
+
+
+    /* =========================================================
+       PLAN BADGE
+    ========================================================= */
+
+    .plan-badge {
+
+      position: absolute;
+
+      top: 1.25rem;
+      right: 1.25rem;
+
+      padding:
+        0.4rem 0.75rem;
+
+      border-radius: 999px;
+
+      font-family:
+        var(--font-mono);
+
+      font-size:
+        0.72rem;
+
+      letter-spacing:
+        0.05em;
+
+      text-transform:
+        uppercase;
+
+      color: #fff;
+
+      background:
+        rgba(139, 92, 246, 0.22);
+
+      border:
+        1px solid rgba(139, 92, 246, 0.4);
+    }
+
+
+    /* =========================================================
+       PLAN ICON
+    ========================================================= */
+
+    .plan-icon {
+
+      width: 58px;
+      height: 58px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 16px;
+
+      margin-bottom: 1.2rem;
+
+      color:
+        var(--color-cyan);
+
+      background:
+        rgba(0, 210, 255, 0.09);
+
+      border:
+        1px solid rgba(0, 210, 255, 0.22);
+
+      font-size:
+        1.45rem;
+    }
+
+
+    .featured .plan-icon {
+
+      color:
+        #c084fc;
+
+      background:
+        rgba(139, 92, 246, 0.12);
+
+      border-color:
+        rgba(139, 92, 246, 0.3);
+    }
+
+
+    /* =========================================================
+       PLAN TEXT
+    ========================================================= */
+
+    .plan-name {
+
+      font-size:
+        1.55rem;
+
+      margin-bottom:
+        0.4rem;
+    }
+
+
+    .plan-price {
+
+      font-size:
+        2.6rem;
+
+      font-weight:
+        800;
+
+      line-height:
+        1;
+
+      margin:
+        0.8rem 0 0.35rem;
+    }
+
+
+    .plan-price span {
+
+      font-size:
+        0.9rem;
+
+      font-weight:
+        500;
+
+      color:
+        var(--text-muted);
+    }
+
+
+    .plan-desc {
+
+      color:
+        var(--text-secondary);
+
+      margin-bottom:
+        1.5rem;
+    }
+
+
+    /* =========================================================
+       PERKS
+    ========================================================= */
+
+    .perk-list {
+
+      list-style:
+        none;
+
+      padding:
+        0;
+
+      margin:
+        0 0 1.8rem;
+
+      display:
+        grid;
+
+      gap:
+        0.85rem;
+    }
+
+
+    .perk-list li {
+
+      display:
+        flex;
+
+      align-items:
+        flex-start;
+
+      gap:
+        0.7rem;
+
+      color:
+        var(--text-secondary);
+
+      line-height:
+        1.5;
+    }
+
+
+    .perk-list i {
+
+      margin-top:
+        0.2rem;
+
+      color:
+        var(--color-cyan);
+    }
+
+
+    .featured .perk-list i {
+
+      color:
+        #c084fc;
+    }
+
+
+    /* =========================================================
+       JOIN LOCATION
+    ========================================================= */
+
+    .join-location {
+
+      max-width:
+        1000px;
+
+      margin:
+        0 auto;
+
+      padding:
+        clamp(2rem, 5vw, 3.5rem);
+
+      text-align:
+        center;
+
+      border-radius:
+        var(--radius-lg);
+
+      border:
+        1px solid rgba(0, 210, 255, 0.35);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(0, 210, 255, 0.12),
+          transparent 55%
+        ),
+
+        rgba(10, 18, 34, 0.82);
+    }
+
+
+    .location-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        1rem;
+
+      max-width:
+        700px;
+
+      margin:
+        2rem auto;
+    }
+
+
+    .location-item {
+
+      padding:
+        1.25rem;
+
+      border-radius:
+        16px;
+
+      background:
+        rgba(255, 255, 255, 0.035);
+
+      border:
+        1px solid var(--border-subtle);
+    }
+
+
+    .location-item i {
+
+      color:
+        var(--color-cyan);
+
+      font-size:
+        1.2rem;
+
+      margin-bottom:
+        0.55rem;
+    }
+
+
+    .location-label {
+
+      display:
+        block;
+
+      font-family:
+        var(--font-mono);
+
+      font-size:
+        0.72rem;
+
+      color:
+        var(--text-muted);
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.06em;
+
+      margin-bottom:
+        0.3rem;
+    }
+
+
+    .location-value {
+
+      font-weight:
+        700;
+
+      color:
+        var(--text-main);
+    }
+
+
+    .join-note {
+
+      max-width:
+        650px;
+
+      margin:
+        0 auto 1.6rem;
+
+      color:
+        var(--text-secondary);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 720px) {
+
+      .plans-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .location-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .plan-card {
+
+        padding:
+          1.6rem;
+      }
+
+
+      .plan-badge {
+
+        position:
+          static;
+
+        display:
+          inline-block;
+
+        margin-bottom:
+          1rem;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
+
+  <header class="site-header" id="site-header">
+
+    <div class="container nav-container">
+
+
+      <!-- LOGO -->
+
+      <a href="index.html"
+        class="brand-logo"
+        aria-label="Student Research Council Home">
+
+        <div class="logo-icon">
+
+          <img
+            src="srclogo.jpeg"
+            alt="SRC Student Research Council Logo">
+
+        </div>
+
+
+        <div class="brand-text">
+
+          <span class="brand-name">
+            SRC
+          </span>
+
+          <span class="brand-sub">
+            Research Council
+          </span>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- NAVIGATION -->
+
+      <nav aria-label="Main Navigation">
+
+        <ul class="nav-links">
+
+          <li class="nav-item">
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="about.html">
+              About SRC
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="events.html">
+              Events
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="team.html">
+              Team
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+
+            <a href="curiominds.html">
+
+              Curiominds
+
+              <span class="badge-nav-new">
+                NEW
+              </span>
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+      <!-- NAV ACTION -->
+
+      <div class="nav-actions">
+
+        <a
+          href="joinus.html"
+          class="btn btn-primary btn-sm btn-shimmer btn-desktop-only">
+
+          Join SRC →
+
+        </a>
+
+
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================================
+       MOBILE NAVIGATION
+  ========================================================= -->
+
+  <div class="mobile-nav-overlay"></div>
+
+
+  <aside
+    class="mobile-nav-drawer"
+    aria-label="Mobile Navigation">
+
+
+    <ul class="mobile-nav-links">
+
+      <li class="mobile-nav-item">
+        <a href="index.html">
+          Home <span>→</span>
+        </a>
+      </li>
+
+
+      <li class="mobile-nav-item">
+        <a href="about.html">
+          About SRC <span>→</span>
+        </a>
+      </li>
+
+
+      <li class="mobile-nav-item">
+        <a href="events.html">
+          Events <span>→</span>
+        </a>
+      </li>
+
+
+      <li class="mobile-nav-item">
+        <a href="curiominds.html">
+          Curiominds <span>→</span>
+        </a>
+      </li>
+
+
+      <li class="mobile-nav-item">
+        <a href="team.html">
+          Leadership & Team <span>→</span>
+        </a>
+      </li>
+
+
+      <li class="mobile-nav-item">
+        <a href="contact.html">
+          Contact Us <span>→</span>
+        </a>
+      </li>
+
+    </ul>
+
+
+    <div class="mobile-nav-footer">
+
+      <a
+        href="joinus.html"
+        class="btn btn-primary btn-full">
+
+        Join SRC
+
+      </a>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
+
+  <main id="main-content">
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="section join-hero">
+
+      <div class="container">
+
+
+        <span class="section-tag reveal">
+          Become a Part of SRC
+        </span>
+
+
+        <h1 class="reveal reveal-delay-1">
+
+          Choose Your
+
+          <span class="text-gradient">
+            Membership
+          </span>
+
+        </h1>
+
+
+        <p
+          class="reveal reveal-delay-2"
+          style="
+            max-width:760px;
+            margin:0 auto;
+            font-size:1.15rem;
+            color:var(--text-secondary);
+            line-height:1.7;
+          ">
+
+          Join the Student Research Council and become part of
+          a community focused on research, innovation,
+          mentorship, projects, and real-world impact.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MEMBERSHIP PLANS
+    ========================================================= -->
+
+    <section
+      class="section"
+      style="padding-top:1rem;">
+
+      <div class="container">
+
+
+        <div class="section-header">
+
+          <span class="section-tag">
+            Membership Plans
+          </span>
+
+
+          <h2 class="section-title">
+
+            Choose the plan that fits
+
+            <span class="text-gradient">
+              you
+            </span>
+
+          </h2>
+
+
+          <p class="section-description">
+
+            Select your membership plan and meet
+            the SRC team in person to complete
+            your joining process.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="plans-grid">
+
+
+          <!-- =================================================
+               ₹2000 PLAN
+          ================================================== -->
+
+          <article class="plan-card reveal">
+
+
+            <div class="plan-icon">
+
+              <i class="fa-solid fa-flask"></i>
+
+            </div>
+
+
+            <h3 class="plan-name">
+              SRC Explorer
+            </h3>
+
+
+            <div class="plan-price">
+
+              ₹2,000
+
+              <span>
+                membership
+              </span>
+
+            </div>
+
+
+            <p class="plan-desc">
+
+              A starting point for students
+              who want to explore research,
+              innovation and the SRC community.
+
+            </p>
+
+
+            <ul class="perk-list">
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  SRC membership and community access
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Access to SRC workshops and learning sessions
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Participation in selected research
+                  and innovation activities
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Peer collaboration and project networking
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Guidance for exploring project
+                  and research ideas
+                </span>
+
+              </li>
+
+
+            </ul>
+
+
+            <a
+              href="#join-location"
+              class="btn btn-outline btn-full">
+
+              Join This Plan →
+
+            </a>
+
+          </article>
+
+
+
+          <!-- =================================================
+               ₹6000 PLAN
+          ================================================== -->
+
+          <article
+            class="plan-card featured reveal reveal-delay-1">
+
+
+            <span class="plan-badge">
+              Extended Access
+            </span>
+
+
+            <div class="plan-icon">
+
+              <i class="fa-solid fa-rocket"></i>
+
+            </div>
+
+
+            <h3 class="plan-name">
+              SRC Innovator
+            </h3>
+
+
+            <div class="plan-price">
+
+              ₹6,000
+
+              <span>
+                membership
+              </span>
+
+            </div>
+
+
+            <p class="plan-desc">
+
+              A deeper SRC experience for students
+              ready to actively build, research,
+              and innovate.
+
+            </p>
+
+
+            <ul class="perk-list">
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Everything included in SRC Explorer
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Priority research and project mentorship
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Advanced workshops and hands-on
+                  learning opportunities
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Greater project, hackathon,
+                  and innovation support
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Guidance for research presentations
+                  and academic opportunities
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Stronger networking with the
+                  SRC research community
+                </span>
+
+              </li>
+
+
+            </ul>
+
+
+            <a
+              href="#join-location"
+              class="btn btn-primary btn-full btn-shimmer">
+
+              Join This Plan →
+
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         JOINING INFORMATION
+    ========================================================= -->
+
+    <section
+      class="section"
+      id="join-location"
+      style="padding-top:2rem;">
+
+      <div class="container">
+
+
+        <div class="join-location reveal">
+
+
+          <span class="section-tag">
+            Ready to Join?
+          </span>
+
+
+          <h2
+            style="
+              font-size:clamp(2rem,4vw,3rem);
+              margin:1rem 0;
+            ">
+
+            Meet Us
+
+            <span class="text-gradient">
+              In Person
+            </span>
+
+          </h2>
+
+
+          <p class="join-note">
+
+            Want to become a member?
+
+            Visit the SRC team during
+            the joining hours below.
+
+            Our team will explain the plans,
+            answer your questions, and guide
+            you through the joining process.
+
+          </p>
+
+
+
+          <div class="location-grid">
+
+
+            <!-- LOCATION -->
+
+            <div class="location-item">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+              <span class="location-label">
+                Meet Us At
+              </span>
+
+              <span class="location-value">
+                AI & Future Center — CL101
+              </span>
+
+            </div>
+
+
+
+            <!-- TIME -->
+
+            <div class="location-item">
+
+              <i class="fa-regular fa-clock"></i>
+
+              <span class="location-label">
+                Joining Hours
+              </span>
+
+              <span class="location-value">
+                2:00 PM – 6:00 PM
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+
+          <p
+            style="
+              color:var(--text-muted);
+              font-size:.9rem;
+              margin-bottom:1.5rem;
+            ">
+
+            Drop by during the above hours
+            to talk to the SRC team about
+            membership.
+
+          </p>
+
+
+          <a
+            href="contact.html"
+            class="btn btn-primary btn-lg btn-shimmer">
+
+            <i class="fa-solid fa-comments"></i>
+
+            Have a Question? Contact Us
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================= -->
+
+    <section
+      class="section"
+      style="padding-top:0;">
+
+      <div class="container">
+
+
+        <div class="cta-banner-card reveal">
+
+
+          <span class="section-tag">
+            Where Innovation Meets Reality
+          </span>
+
+
+          <h2
+            style="
+              font-size:clamp(2rem,3.5vw,3rem);
+              margin-bottom:1rem;
+            ">
+
+            Your Idea Could Be the
+
+            <span class="text-gradient">
+              Next Breakthrough.
+            </span>
+
+          </h2>
+
+
+          <p
+            style="
+              max-width:620px;
+              margin:0 auto;
+              color:var(--text-secondary);
+              font-size:1.05rem;
+            ">
+
+            Take the first step.
+            Choose your plan and come meet
+            the SRC team at CL101.
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+          <a
+            href="index.html"
+            class="brand-logo">
+
+
+            <div class="logo-icon">
+
+              <img
+                src="srclogo.jpeg"
+                alt="SRC Student Research Council Logo">
+
+            </div>
+
+
+            <div class="brand-text">
+
+              <span class="brand-name">
+                SRC
+              </span>
+
+              <span class="brand-sub">
+                Student Research Council
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <div class="footer-tagline">
+
+            "Where Innovation Meets Reality"
+
+          </div>
+
+
+          <p class="footer-bio">
+
+            Official university research and
+            innovation council dedicated to
+            student-led scientific exploration
+            and real-world impact.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <div class="footer-col">
+
+          <h4>
+            Navigation
+          </h4>
+
+
+          <ul class="footer-links">
+
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html">
+                About SRC
+              </a>
+            </li>
+
+            <li>
+              <a href="events.html">
+                Events & Workshops
+              </a>
+            </li>
+
+            <li>
+              <a href="curiominds.html">
+                Curiominds Platform
+              </a>
+            </li>
+
+            <li>
+              <a href="team.html">
+                Leadership & Team
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                Contact Us
+              </a>
+            </li>
+
+            <li>
+              <a href="joinus.html">
+                Join SRC
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <!-- JOIN -->
+
+        <div class="footer-col">
+
+          <h4>
+            Join SRC
+          </h4>
+
+
+          <p
+            style="
+              color:var(--text-secondary);
+              font-size:.9rem;
+            ">
+
+            Explore membership options and
+            meet the team at AI & Future Center,
+            CL101, between 2 PM and 6 PM.
+
+          </p>
+
+
+          <a
+            href="#join-location"
+            class="btn btn-outline btn-sm">
+
+            View Membership Plans →
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- FOOTER BOTTOM -->
+
+      <div class="footer-bottom">
+
+        <div>
+          © 2026 Student Research Council.
+          All rights reserved.
+        </div>
+
+
+        <div class="footer-bottom-links">
+
+          <a href="about.html">
+            Council Charter
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+          <a href="curiominds.html">
+            Curiominds
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       EXISTING JS
+  ========================================================= -->
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
